@@ -1,6 +1,4 @@
 {
   "navigationBarTitleText": "首页",
-  "usingComponents": {
-    "van-skeleton": "vant-weapp/button"
-  }
+  "usingComponents": {}
 }

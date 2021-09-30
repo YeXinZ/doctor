@@ -17,9 +17,9 @@
   </view>
 
   <view class="list_wrap">
-    <van-skeleton :row="3" :loading="loading">
-      <div>实际内容</div>
-    </van-skeleton>
+    <view class="list_item" wx:for="{{articles}}">
+      <image></image>
+    </view>
   </view>
 
   <view class="module_header">

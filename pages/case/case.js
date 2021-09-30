@@ -1,42 +1,28 @@
-// pages/doctor/doctor.js
+// pages/case/case.js
+import {
+  getCase
+} from "../../api/index";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    menuList: [{
-        title: '生活打卡',
-        icon: '/images/menu-dk.png',
-        pagePath: '/pages/clock/clock'
-      },
-      {
-        title: '生活指导',
-        icon: '/images/menu-zd.png',
-        pagePath: '/pages/guide/guide'
-      },
-      {
-        title: '病例',
-        icon: '/images/menu-bl.png',
-        pagePath: '/pages/case/case'
-      }
-    ]
+
   },
 
-  toPage(e) {
-    const path = e.currentTarget.dataset.path;
-    if (path) {
-      wx.navigateTo({
-        url: path
-      })
-    }
+  getData() {
+    getCase().then(res => {
+      console.log(res, 1111);
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   /**

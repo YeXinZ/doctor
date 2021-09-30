@@ -1,7 +1,48 @@
 <!--index.wxml-->
 <view class="container">
-  <view wx:for="{{menuList}}" class="flex align-center menu_item" data-path="{{item.pagePath}}" bindtap="toPage">
-    <image src="{{item.icon}}"></image>
-    <text>{{item.title}}</text>
+  <view class="flex justify-between w-100">
+    <view class="menu_item" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
+      <image src="../../images/menu-bg.png"></image>
+      <text>{{menuList[0].title}}</text>
+    </view>
+    <view class="menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
+      <image src="../../images/menu-bg.png"></image>
+      <text>{{menuList[3].title}}</text>
+    </view>
   </view>
+
+  <view class="module_header">
+    <text>{{menuList[1].title}}</text>
+    <text class="more_btn">更多</text>
+  </view>
+
+  <view class="list_wrap">
+    <van-skeleton :row="3" :loading="loading">
+      <div>实际内容</div>
+    </van-skeleton>
+  </view>
+
+  <view class="module_header">
+    <text>{{menuList[2].title}}</text>
+    <text class="more_btn">更多</text>
+  </view>
+
+  <!-- <view class="flex align-center menu_item" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
+    <image src="{{menuList[0].icon}}"></image>
+    <text>{{menuList[0].title}}</text>
+  </view> -->
+  <!-- <view class="flex align-center menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
+    <image src="{{menuList[1].icon}}"></image>
+    <text>{{menuList[1].title}}</text>
+  </view>
+  <view class="flex two_col">
+    <view class="flex align-center menu_item" data-path="{{menuList[2].pagePath}}" bindtap="toPage">
+      <image src="{{menuList[2].icon}}"></image>
+      <text>{{menuList[2].title}}</text>
+    </view>
+    <view class="flex align-center menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
+      <image style="width:60rpx;height:60rpx;margin-right:20rpx" src="{{menuList[3].icon}}"></image>
+      <text>{{menuList[3].title}}</text>
+    </view>
+  </view> -->
 </view>

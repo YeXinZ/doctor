@@ -23,7 +23,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": false,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.17.0",
-  "appid": "wxf45638aedaf0f93f",
+  "appid": "wxd523246bcc6641b2",
   "projectname": "doctor",
   "debugOptions": {
     "hidedInDevtools": []

@@ -4,7 +4,8 @@
     "pages/mine/mine",
     "pages/doctor/doctor",
     "pages/guide/guide",
-    "pages/clock/clock"
+    "pages/clock/clock",
+    "pages/case/case"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,10 +14,9 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#262626",
-    "selectedColor": "#76ce6e",
-    "list": [
-      {
+    "color": "#bdbdbd",
+    "selectedColor": "#BF3F3F",
+    "list": [{
         "pagePath": "pages/index/index",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-hover.png",

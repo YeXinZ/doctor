@@ -3,15 +3,22 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/doctor/doctor",
-    "pages/guide/guide",
     "pages/clock/clock",
-    "pages/case/case"
+    "pages/activity/activity",
+    "pages/activity/detail",
+    "pages/article/article",
+    "pages/article/detail",
+    "pages/guide/medicine",
+    "pages/guide/food",
+    "pages/guide/sport",
+    "pages/case/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#bdbdbd",
@@ -30,6 +37,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

@@ -14,6 +14,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    imgUrl: "http://img.xunshanfang.cn/"
   }
 })

@@ -6,6 +6,20 @@ page {
   --bgColor: #F3EFEC;
   --greenColor: #A0B683;
   --greyColor: #BDBDBD;
+  --borderColor: #eeeeee;
+  --pageColor: #F9F7F6;
+  --wrapBorder: #76664D;
+}
+
+view {
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 30rpx;
+}
+
+text {
+  color: #333333;
+  font-size: 30rpx;
 }
 
 .w-100 {
@@ -62,4 +76,42 @@ view {
 
 .text-right {
   text-align: right;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.load_bottom {
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.load_bottom text {
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.submit_btn {
+  background-color: var(--redColor);
+  color: #ffffff;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+
+.upload_btn {
+  background-color: var(--mainColor);
+  color: #ffffff;
+  margin: 0;
+}
+
+.van-tab view {
+  color: #333333;
+}
+
+.van-tab--active view {
+  color: #ffffff;
 }

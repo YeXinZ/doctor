@@ -1,0 +1,17 @@
+/* pages/activity/activity.wxss */
+.page_top {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border-bottom: 1px solid var(--borderColor);
+  border-top: 1px solid var(--borderColor);
+}
+
+.page_top text {
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.page_list {
+  padding: 20rpx 30rpx;
+}

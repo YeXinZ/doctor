@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "健康百科",
+  "usingComponents": {
+    "article-item": "../../components/aItem/aItem",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-sticky": "@vant/weapp/sticky/index"
+  }
+}

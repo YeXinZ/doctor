@@ -1,0 +1,14 @@
+<!--pages/activity/activity.wxml-->
+<view class="activity">
+  <view class="page_top">
+    <text>最新活动</text>
+  </view>
+  <view class="page_list">
+    <block wx:for="{{dataList}}">
+      <activity-item info-data="{{item}}"></activity-item>
+    </block>
+    <view class="text-center load_bottom" wx:if="loadText">
+      <text>{{loadText}}</text>
+    </view>
+  </view>
+</view>

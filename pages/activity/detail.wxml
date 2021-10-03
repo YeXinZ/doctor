@@ -1,0 +1,31 @@
+<!--pages/activity/detail.wxml-->
+<view class="activity_detail">
+  <view class="swiper_wrap">
+    <swiper autoplay="{{true}}">
+      <block wx:for="{{infoData.activity_img}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <van-image width="100%" height="100%" src="{{imgBase+item}}" />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="content">
+    <view class="wrap">
+      <view class="title">{{infoData.activity_name}}</view>
+      <view class="time">时间：{{infoData.activity_time}}</view>
+      <view class="address">地址：{{infoData.activity_address}}</view>
+    </view>
+    <view class="wrap">
+      <view>活动介绍</view>
+      <rich-text nodes="{{infoData.content}}"></rich-text>
+    </view>
+    <view class="wrap">
+      <van-field title-width="60px" model:value="{{user_name}}" label="姓名" placeholder="请输入姓名" clearable />
+      <van-field title-width="60px" model:value="{{user_mobile}}" type="number" label="手机号" placeholder="请输入手机号"
+        clearable />
+      <button class="submit_btn" type="warn" bindtap="toApply">立即报名</button>
+    </view>
+  </view>
+</view>

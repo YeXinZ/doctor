@@ -1,0 +1,9 @@
+<!--pages/guide/sport.wxml-->
+<view class="sport_guide">
+  <view class="list_item" wx:for="{{dataList}}">
+    <view class="date">{{item.plan_date}}</view>
+    <view wx:for="{{item.motions_content}}" wx:for-index="mIdx" wx:for-item="motion">
+      <view>{{motion.motion_name}}</view>
+    </view>
+  </view>
+</view>

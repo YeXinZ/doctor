@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index",
+    "van-field": "@vant/weapp/field/index"
+  }
+}

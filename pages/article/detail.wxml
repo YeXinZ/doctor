@@ -1,0 +1,10 @@
+<!--pages/article/detail.wxml-->
+<view class="article_detail">
+  <view class="title">{{infoData.title}}</view>
+  <view class="author">
+    <text>{{infoData.author}}</text>
+    <text>{{infoData.publish_time}}</text>
+  </view>
+  <view class="abstract">摘要：{{infoData.abstract}}</view>
+  <rich-text nodes="{{infoData.content}}"></rich-text>
+</view>

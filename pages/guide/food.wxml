@@ -1,0 +1,9 @@
+<!--pages/guide/food.wxml-->
+<view class="food_guide">
+  <view class="list_item" wx:for="{{dataList}}">
+    <view class="date">{{item.plan_date}}</view>
+    <view><text>早餐：</text>{{item.breakfast}}</view>
+    <view><text>午餐：</text>{{item.lunch}}</view>
+    <view><text>晚餐：</text>{{item.dinner}}</view>
+  </view>
+</view>

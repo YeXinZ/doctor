@@ -1,0 +1,35 @@
+/* components/aItem/aItem.wxss */
+.article_item {
+  display: flex;
+  padding: 5px;
+  height: 60px;
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  border: 3rpx solid var(--borderColor);
+  margin-top: 14rpx;
+}
+
+.content {
+  flex: 1;
+  margin-left: 20rpx;
+  overflow: hidden;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desc {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* 这里是超出几行省略 */
+  overflow: hidden;
+  color: #999999;
+}

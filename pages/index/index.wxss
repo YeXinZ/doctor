@@ -45,9 +45,14 @@
 
 .module_header text {
   font-weight: bold;
+  font-size: 34rpx;
 }
 
 .module_header .more_btn {
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: var(--mainColor);
+}
+
+.list_wrap{
+  padding-top: 20rpx;
 }

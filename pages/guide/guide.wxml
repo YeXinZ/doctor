@@ -1,7 +1,0 @@
-<!--pages/guide/guide.wxml-->
-<view class="container">
-  <view wx:for="{{menuList}}" class="flex align-center menu_item" data-path="{{item.pagePath}}" bindtap="toPage">
-    <image src="{{item.icon}}"></image>
-    <text>{{item.title}}</text>
-  </view>
-</view>

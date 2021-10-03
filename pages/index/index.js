@@ -1,28 +1,30 @@
 // index.js
 import {
-  getArticleList,
+  getHotArticle,
   activityList
 } from "../../api/index";
 
 Page({
   data: {
     menuList: [{
-        title: '私人医生\n健康管理',
-        pagePath: '/pages/doctor/doctor'
-      },
-      {
-        title: '健康百科'
-      },
-      {
-        title: '最新活动'
-      },
-      {
-        title: '联系医生\n立马咨询'
-      }
+      title: '私人医生\n健康管理',
+      pagePath: '/pages/doctor/doctor'
+    },
+    {
+      title: '热门文章',
+      pagePath: '/pages/article/article'
+    },
+    {
+      title: '最新活动',
+      pagePath: "/pages/activity/activity"
+    },
+    {
+      title: '联系医生\n立马咨询'
+    }
     ],
     articles: [],
     activities: [],
-    loading: true
+    loading: true,
   },
   toPage(e) {
     const path = e.currentTarget.dataset.path;
@@ -33,20 +35,8 @@ Page({
     }
   },
   getArticle() {
-    getArticleList({
-      page: 1,
-      pageSize: 8,
-      type_id: 4
-    }).then(res => {
-      // const list = res.data;
-      const list = [{
-        "id": 18,
-        "title": "鞍山市",
-        "image": "topic/20210814\b684afc15721dccc68d1357afb8257c7.png",
-        "abstract": "按时大大",
-        "author": "按时大大",
-        "publish_time": "2021-08-13 00:00:00"
-      }];
+    getHotArticle().then(res => {
+      const list = [...res];
       console.log(list);
       this.setData({
         articles: list
@@ -67,5 +57,12 @@ Page({
   onLoad() {
     this.getArticle();
     this.getActivity();
-  }
+  },
+  onPullDownRefresh: function () {
+    setTimeout(() => {
+      this.getArticle();
+      this.getActivity();
+      wx.stopPullDownRefresh();
+    }, 500);
+  },
 })

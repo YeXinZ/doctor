@@ -11,38 +11,27 @@
     </view>
   </view>
 
-  <view class="module_header">
-    <text>{{menuList[1].title}}</text>
-    <text class="more_btn">更多</text>
-  </view>
-
-  <view class="list_wrap">
-    <view class="list_item" wx:for="{{articles}}">
-      <image></image>
+  <block wx:if="{{articles.length>0}}">
+    <view class="module_header">
+      <text>{{menuList[1].title}}</text>
+      <text class="more_btn" data-path="{{menuList[1].pagePath}}" bindtap="toPage">更多</text>
     </view>
-  </view>
+    <view class="w-100 list_wrap">
+      <block wx:for="{{articles}}">
+        <article-item info-data="{{item}}"></article-item>
+      </block>
+    </view>
+  </block>
 
-  <view class="module_header">
-    <text>{{menuList[2].title}}</text>
-    <text class="more_btn">更多</text>
-  </view>
-
-  <!-- <view class="flex align-center menu_item" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
-    <image src="{{menuList[0].icon}}"></image>
-    <text>{{menuList[0].title}}</text>
-  </view> -->
-  <!-- <view class="flex align-center menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
-    <image src="{{menuList[1].icon}}"></image>
-    <text>{{menuList[1].title}}</text>
-  </view>
-  <view class="flex two_col">
-    <view class="flex align-center menu_item" data-path="{{menuList[2].pagePath}}" bindtap="toPage">
-      <image src="{{menuList[2].icon}}"></image>
+  <block wx:if="{{activities.length>0}}">
+    <view class="module_header">
       <text>{{menuList[2].title}}</text>
+      <text class="more_btn" data-path="{{menuList[2].pagePath}}" bindtap="toPage">更多</text>
     </view>
-    <view class="flex align-center menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
-      <image style="width:60rpx;height:60rpx;margin-right:20rpx" src="{{menuList[3].icon}}"></image>
-      <text>{{menuList[3].title}}</text>
+    <view class="w-100 list_wrap">
+      <block wx:for="{{activities}}">
+        <activity-item info-data="{{item}}"></activity-item>
+      </block>
     </view>
-  </view> -->
+  </block>
 </view>

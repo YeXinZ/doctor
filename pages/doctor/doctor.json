@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "私人医生健康管理"
+  "navigationBarTitleText": "私人医生健康管理",
+  "usingComponents": {
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-image": "@vant/weapp/image/index"
+  }
 }

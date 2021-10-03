@@ -1,0 +1,8 @@
+<!--components/aItem/aItem.wxml-->
+<view class="article_item" data-id="{{infoData.id}}" bindtap="toDetail">
+  <van-image width="50" height="100%" lazy-load src="{{imgBase+infoData.image}}" />
+  <view class="content">
+    <view class="title">{{infoData.title}}</view>
+    <view class="desc">{{infoData.abstract}}</view>
+  </view>
+</view>

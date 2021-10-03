@@ -1,1 +1,52 @@
 /* pages/doctor/doctor.wxss */
+.doctor {
+  min-height: 100vh;
+  padding: 30rpx;
+  background-color: var(--pageColor);
+}
+
+.module {
+  padding: 0 10rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+}
+
+.module_title {
+  font-weight: bolder;
+  padding: 20rpx;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.menu_title {
+  font-size: 24rpx;
+  color: var(--mainColor);
+  margin-top: 10rpx;
+}
+
+.case_item {
+  background-color: var(--bgColor);
+  border: 2px solid var(--wrapBorder);
+  padding: 10rpx;
+}
+
+.case_item+.case_item {
+  margin-top: 20rpx;
+}
+
+.case_item .title {
+  margin-bottom: 20rpx;
+}
+
+.case_item .content {
+  margin-top: 20rpx;
+  color: var(--mainColor);
+  font-size: 30rpx;
+}
+
+button.upload_btn {
+  line-height: 2;
+  padding: 0 7px;
+  font-size: 28rpx;
+}

@@ -1,0 +1,33 @@
+/* components/vItem/vItem.wxss */
+.activity_item {
+  display: flex;
+  border-radius: 10rpx;
+  padding: 5px;
+  height: 70px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  border: 3rpx solid var(--borderColor);
+  margin-top: 14rpx;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  overflow: hidden;
+  padding: 20rpx 0;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desc {
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

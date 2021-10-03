@@ -1,0 +1,8 @@
+<!--components/vItem/vItem.wxml-->
+<view class="activity_item" data-id="{{infoData.id}}" bindtap="toDetail">
+  <van-image width="80" height="100%" lazy-load src="{{imgBase+infoData.activity_img}}" />
+  <view class="content">
+    <view class="title">{{infoData.activity_name}}</view>
+    <view class="desc">{{infoData.activity_time}}</view>
+  </view>
+</view>

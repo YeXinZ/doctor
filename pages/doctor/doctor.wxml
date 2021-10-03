@@ -1,7 +1,39 @@
 <!--pages/doctor/doctor.wxml-->
-<view class="container">
-  <view wx:for="{{menuList}}" class="flex align-center menu_item" data-path="{{item.pagePath}}" bindtap="toPage">
-    <image src="{{item.icon}}"></image>
-    <text>{{item.title}}</text>
+<view class="doctor">
+  <view class="module" wx:for="{{menuList}}">
+    <view class="module_title">{{item.title}}</view>
+    <view>
+      <van-grid gutter="{{5}}" border="{{false}}">
+        <van-grid-item use-slot wx:for="{{item.menus}}" wx:for-index="idx" wx:for-item="menu" url="{{menu.pagePath}}">
+          <image style="width:70rpx;height:70rpx;margin-bottome:20rpx" src="{{menu.iconPath}}" />
+          <text class="menu_title">{{menu.title}}</text>
+        </van-grid-item>
+      </van-grid>
+    </view>
+  </view>
+
+  <view class="module">
+    <view class="flex justify-between align-center module_title">
+      <text>历史病例</text>
+      <button class="upload_btn" size="mini" bindtap="toCase">上传病例</button>
+    </view>
+    <view style="padding: 20rpx 0;">
+      <view class="case_item" wx:for="{{dataList}}">
+        <view class="title">病例：</view>
+        <van-grid column-num="2" gutter="{{5}}" border="{{false}}">
+          <van-grid-item use-slot wx:for="{{item.case_img}}" wx:for-index="imgIdx" wx:for-item="img">
+            <van-image width="100%" height="60" lazy-load src="{{imgBase+img}}" />
+          </van-grid-item>
+        </van-grid>
+        <view class="content" style="margin-bottom:20rpx">{{item.case_content}}</view>
+        <view class="title">药方：</view>
+        <van-grid column-num="2" gutter="{{5}}" border="{{false}}">
+          <van-grid-item use-slot wx:for="{{item.prescription_img}}" wx:for-index="imgIdx" wx:for-item="img">
+            <van-image width="100%" height="60" lazy-load src="{{imgBase+img}}" />
+          </van-grid-item>
+        </van-grid>
+        <view class="content">{{item.prescription_data}}</view>
+      </view>
+    </view>
   </view>
 </view>

@@ -1,2 +1,15 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="mine">
+  <view class="page_top">
+    <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
+    <view class="name">用户名</view>
+  </view>
+  <view class="menu_list">
+    <van-cell-group>
+      <van-cell title="我的活动" is-link />
+      <van-cell title="我的收藏" is-link />
+      <van-cell title="治疗项目" is-link url="/pages/cure/cure" />
+      <van-cell title="联系医生" is-link />
+    </van-cell-group>
+  </view>
+</view>

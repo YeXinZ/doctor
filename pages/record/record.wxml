@@ -1,0 +1,10 @@
+<!--pages/record/record.wxml-->
+<view class="record">
+  <view class="main">
+    <view class="title">{{item_name}}</view>
+    <view class="content">
+      <view>使用记录：</view>
+      <view class="date_item" wx:for="{{dataList}}">{{item.create_time}}</view>
+    </view>
+  </view>
+</view>

@@ -1,1 +1,23 @@
 /* pages/mine/mine.wxss */
+.mine {
+  min-height: 100vh;
+  background-color: var(--pageColor);
+}
+
+.page_top {
+  display: flex;
+  align-items: center;
+  height: 200rpx;
+  padding: 0 40rpx;
+  background-color: #ffffff;
+}
+
+.page_top .name {
+  margin-left: 30rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.menu_list {
+  margin-top: 30rpx;
+}

@@ -3,7 +3,7 @@
   <view class="module" wx:for="{{menuList}}">
     <view class="module_title">{{item.title}}</view>
     <view>
-      <van-grid gutter="{{5}}" border="{{false}}">
+      <van-grid gutter="{{5}}" column-num="3" border="{{false}}">
         <van-grid-item use-slot wx:for="{{item.menus}}" wx:for-index="idx" wx:for-item="menu" url="{{menu.pagePath}}">
           <image style="width:70rpx;height:70rpx;margin-bottome:20rpx" src="{{menu.iconPath}}" />
           <text class="menu_title">{{menu.title}}</text>

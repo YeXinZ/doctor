@@ -1,7 +1,7 @@
-/* pages/case/add.wxss */
-.case_add {
+/* pages/record/record.wxss */
+.record {
   min-height: 100vh;
-  padding: 30rpx;
+  padding: 20rpx;
   background-color: var(--pageColor);
 }
 
@@ -12,23 +12,15 @@
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
-.title {
+.main .title {
   font-weight: bolder;
   padding: 20rpx;
   border-bottom: 1px solid var(--borderColor);
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 
-.content {
-  padding: 0 10rpx 20rpx;
-}
-
-.content .van-field {
-  padding: 0;
-}
-
-.tip {
-  font-size: 24rpx;
-  color: #999999;
-  margin: 10rpx 0 20rpx;
+.main .content view {
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  font-size: 30rpx;
 }

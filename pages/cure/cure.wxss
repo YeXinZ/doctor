@@ -1,0 +1,29 @@
+/* pages/cure/cure.wxss */
+.cure {
+  padding: 20rpx;
+}
+
+.list_item {
+  background-color: var(--bgColor);
+  border: 2px solid var(--wrapBorder);
+  padding: 10rpx;
+}
+
+.list_item+.list_item {
+  margin-top: 20rpx;
+}
+
+.list_item .name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.list_item view {
+  font-size: 30rpx;
+  line-height: 1.8;
+}
+
+.list_item view text {
+  color: #666666;
+}

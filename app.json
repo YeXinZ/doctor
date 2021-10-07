@@ -11,7 +11,9 @@
     "pages/guide/medicine",
     "pages/guide/food",
     "pages/guide/sport",
-    "pages/case/add"
+    "pages/case/add",
+    "pages/cure/cure",
+    "pages/record/record"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +25,8 @@
   "tabBar": {
     "color": "#bdbdbd",
     "selectedColor": "#BF3F3F",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-hover.png",

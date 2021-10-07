@@ -1,2 +1,20 @@
 <!--pages/case/add.wxml-->
-<text>pages/case/add.wxml</text>
+<view class="case_add">
+  <view class="main">
+    <view class="title">病例</view>
+    <view class="content">
+      <van-uploader file-list="{{case_img}}" bind:after-read="afterRead" />
+      <view class="tip">只支持.jpg格式</view>
+      <van-field model:value="{{case_content}}" type="textarea" autosize="{{autosize}}" placeholder="请输入病例说明"
+        custom-style="padding:0" border="{{false}}" />
+    </view>
+    <view class="title">药方</view>
+    <view class="content">
+      <van-uploader file-list="{{prescription_img}}" bind:after-read="afterRead1" />
+      <view class="tip">只支持.jpg格式</view>
+      <van-field model:value="{{prescription_data}}" type="textarea" autosize="{{autosize}}" placeholder="请输入药方说明"
+        custom-style="padding:0" border="{{false}}" />
+    </view>
+    <button class="submit_btn" type="warn" bindtap="toSubmit">提交</button>
+  </view>
+</view>

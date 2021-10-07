@@ -1,0 +1,8 @@
+<!--pages/cure/cure.wxml-->
+<view class="cure">
+  <view class="list_item" wx:for="{{dataList}}" data-id="{{item.id}}" bindtap="toRecord">
+    <view class="name">{{item.item_name}}</view>
+    <view><text>总次数：</text>{{item.item_num}}</view>
+    <view><text>剩余次数：</text>{{item.last_num}}</view>
+  </view>
+</view>

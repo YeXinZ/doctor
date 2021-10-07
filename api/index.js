@@ -84,3 +84,26 @@ export const getMotion = () => {
     method: 'GET'
   })
 }
+// 添加病例
+export const addCsae = (data) => {
+  return request({
+    url: '/api/Usercase/addCsae',
+    method: 'POST',
+    data
+  })
+}
+// 获取我的项目
+export const getUserItem = () => {
+  return request({
+    url: '/api/Personal/getUserItem',
+    method: 'GET'
+  })
+}
+// 项目使用记录
+export const getItemUseList = (item_id) => {
+  return request({
+    url: '/api/Personal/getItemUseList',
+    method: 'GET',
+    data: { item_id }
+  })
+}

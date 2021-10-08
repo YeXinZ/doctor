@@ -1,0 +1,49 @@
+/* pages/clock/sport.wxss */
+.sport_clock {
+  min-height: 100vh;
+  padding: 30rpx;
+  background-color: var(--pageColor);
+}
+
+.module {
+  padding: 0 10rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+}
+
+.module_title {
+  font-weight: bolder;
+  padding: 20rpx;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.content_wrap {
+  padding: 20rpx;
+}
+
+.sport_item+.sport_item {
+  margin-top: 20rpx;
+}
+
+.sport_item .title {
+  margin-bottom: 20rpx;
+}
+
+.progress_wrap {
+  position: relative;
+}
+
+.input_wrap {
+  border: 1px solid var(--borderColor);
+}
+
+.submit_btn {
+  margin-top: 20rpx;
+}
+
+.more_btn {
+  font-size: 26rpx;
+  color: var(--mainColor);
+}

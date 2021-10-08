@@ -1,0 +1,25 @@
+<!--pages/clock/mood.wxml-->
+<view class="mood_clock">
+  <view class="module">
+    <view class="module_title">心情打卡</view>
+    <view class="content_wrap">
+      <view class="input_wrap">
+        <van-field model:value="{{mood_data}}" type="textarea" autosize="{{autosize}}" placeholder="请输入"
+          border="{{false}}" />
+      </view>
+      <button class="submit_btn" type="warn" bindtap="toSubmit">提交</button>
+    </view>
+  </view>
+  <view class="module">
+    <view class="flex justify-between align-center module_title">
+      <text>提交记录</text>
+      <text class="more_btn" bindtap="checkMore">查看更多</text>
+    </view>
+    <view class="content_wrap">
+      <view class="list_item" wx:for="{{logData}}">
+        <view class="date">{{item.create_time}}</view>
+        <view>{{item.mood_data}}</view>
+      </view>
+    </view>
+  </view>
+</view>

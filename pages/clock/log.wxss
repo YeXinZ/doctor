@@ -1,0 +1,35 @@
+/* pages/clock/log.wxss */
+.page_top {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border-bottom: 1px solid var(--borderColor);
+  border-top: 1px solid var(--borderColor);
+}
+
+.page_top text {
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.page_list {
+  padding: 20rpx 30rpx;
+}
+
+.list_item {
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+  border: 3rpx solid var(--borderColor);
+  margin-top: 14rpx;
+}
+
+.list_item view {
+  font-size: 30rpx;
+  line-height: 1.8;
+}
+
+.date {
+  font-size: 28rpx;
+  font-weight: bold;
+}

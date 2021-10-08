@@ -1,0 +1,58 @@
+/* components/process/process.wxss */
+.progress-root-container {
+  display: flex;
+  flex-direction: row;
+  /* width: 710rpx; */
+  width: 100%;
+  align-items: center;
+  height: 68rpx;
+}
+
+.text {
+  font-size: 28rpx;
+  color: #333;
+  /* position: absolute;
+  left: 40rpx; */
+  font-weight: 700;
+}
+
+.progress-max {
+  position: absolute;
+  /* left: 192rpx; */
+  left: 120rpx;
+  height: 24rpx;
+  width: 428rpx;
+  background: #d8d8d8;
+  border-radius: 30rpx;
+  z-index: 10;
+}
+
+.progress-current {
+  position: absolute;
+  /* left: 192rpx; */
+  left: 120rpx;
+  height: 24rpx;
+  width: 428rpx;
+  background: var(--bgColor);
+  border-radius: 30rpx;
+  z-index: 20;
+}
+
+.pencent-text {
+  font-size: 28rpx;
+  color: var(--mainColor);
+  /* left: 666rpx; */
+  right: 0;
+  position: absolute;
+  z-index: 20;
+}
+
+.slice-button {
+  left: 588rpx;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  z-index: 30;
+  border-radius: 50%;
+  background-color: var(--redColor);
+}

@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/mine/mine",
     "pages/doctor/doctor",
-    "pages/clock/clock",
     "pages/activity/activity",
     "pages/activity/detail",
     "pages/article/article",
@@ -13,7 +12,11 @@
     "pages/guide/sport",
     "pages/case/add",
     "pages/cure/cure",
-    "pages/record/record"
+    "pages/record/record",
+    "pages/clock/mood",
+    "pages/clock/log",
+    "pages/clock/food",
+    "pages/clock/sport"
   ],
   "window": {
     "backgroundTextStyle": "light",

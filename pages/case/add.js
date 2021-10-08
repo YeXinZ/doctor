@@ -2,7 +2,9 @@
 import {
   baseUrl
 } from '../../utils/request';
-import { addCsae } from "../../api/index";
+import {
+  addCsae
+} from "../../api/index";
 
 Page({
 
@@ -20,26 +22,37 @@ Page({
   },
 
   afterRead(event) {
-    const { file } = event.detail;
+    const {
+      file
+    } = event.detail;
     console.log(file);
     wx.uploadFile({
       url: baseUrl + '/api/Upload/upload',
       filePath: file.url,
       name: 'file',
       header: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "multipart/form-data"
       },
       success(res) {
         // 上传完成需要更新 fileList
-        const { case_img = [] } = this.data;
-        case_img.push({ ...file, url: res.data });
-        this.setData({ case_img });
+        const {
+          case_img = []
+        } = this.data;
+        case_img.push({
+          ...file,
+          url: res.data
+        });
+        this.setData({
+          case_img
+        });
       },
     });
   },
 
   afterRead1(event) {
-    const { file } = event.detail;
+    const {
+      file
+    } = event.detail;
     console.log(file);
     wx.uploadFile({
       url: baseUrl + '/api/Upload/upload',
@@ -50,15 +63,27 @@ Page({
       },
       success(res) {
         // 上传完成需要更新 fileList
-        const { prescription_img = [] } = this.data;
-        prescription_img.push({ ...file, url: res.data });
-        this.setData({ prescription_img });
+        const {
+          prescription_img = []
+        } = this.data;
+        prescription_img.push({
+          ...file,
+          url: res.data
+        });
+        this.setData({
+          prescription_img
+        });
       },
     });
   },
 
   toSubmit() {
-    const { case_img, case_content, prescription_img, prescription_data } = this.data;
+    const {
+      case_img,
+      case_content,
+      prescription_img,
+      prescription_data
+    } = this.data;
     if (case_img.length === 0 || prescription_img === 0 || !case_content || !prescription_data) {
       wx.showToast({
         title: '上传信息不完整，请完善信息！',

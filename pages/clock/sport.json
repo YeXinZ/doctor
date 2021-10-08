@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "运动打卡",
+  "usingComponents": {
+    "my-process": "../../components/process/process"
+  },
+  "enablePullDownRefresh": false
+}

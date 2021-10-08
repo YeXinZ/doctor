@@ -23,7 +23,9 @@ export const activityInfo = (id) => {
   return request({
     url: '/api/Activity/activityInfo',
     method: 'GET',
-    data: { id }
+    data: {
+      id
+    }
   })
 }
 // 活动报名
@@ -46,7 +48,9 @@ export const getArticleInfo = (id) => {
   return request({
     url: '/api/Article/getArticleInfo',
     method: 'GET',
-    data: { id }
+    data: {
+      id
+    }
   })
 }
 // 获取病例
@@ -104,6 +108,63 @@ export const getItemUseList = (item_id) => {
   return request({
     url: '/api/Personal/getItemUseList',
     method: 'GET',
-    data: { item_id }
+    data: {
+      item_id
+    }
+  })
+}
+// 获取心情打卡信息
+export const getMood = () => {
+  return request({
+    url: '/api/Clockin/getMood',
+    method: 'GET'
+  })
+}
+// 获取心情打卡列表
+export const getMoodList = (data) => {
+  return request({
+    url: '/api/Clockin/getMoodList',
+    method: 'GET',
+    data
+  })
+}
+// 心情打卡
+export const addMood = (mood_data) => {
+  return request({
+    url: '/api/Clockin/addMood',
+    method: 'POST',
+    data: {
+      mood_data
+    }
+  })
+}
+// 获取饮食指导信息
+export const getTodayDiet = () => {
+  return request({
+    url: '/api/Clockin/getTodayDiet',
+    method: 'GET'
+  })
+}
+// 饮食打卡
+export const addDiet = (data) => {
+  return request({
+    url: '/api/Clockin/addDiet',
+    method: 'POST',
+    data
+  })
+}
+// 获取饮食打卡列表
+export const getDietList = (data) => {
+  return request({
+    url: '/api/Clockin/getDietList',
+    method: 'GET',
+    data
+  })
+}
+// 获取运动指导信息
+export const getClockMotion = () => {
+  return request({
+    url: '/api/Clockin/getMotion',
+    method: 'GET'
   })
 }

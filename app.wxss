@@ -95,7 +95,7 @@ view {
 }
 
 .submit_btn {
-  background-color: var(--redColor);
+  background-color: var(--redColor) !important;
   color: #ffffff;
   height: 80rpx;
   line-height: 80rpx;
@@ -103,7 +103,7 @@ view {
 }
 
 .upload_btn {
-  background-color: var(--mainColor);
+  background-color: var(--mainColor) !important;
   color: #ffffff;
   margin: 0;
 }
@@ -114,4 +114,13 @@ view {
 
 .van-tab--active view {
   color: #ffffff;
+}
+
+.van-radio__icon--checked {
+  background-color: var(--redColor) !important;
+  border-color: var(--redColor) !important;
+}
+
+.van-radio .van-icon {
+  color: #ffffff !important;
 }

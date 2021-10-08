@@ -1,0 +1,9 @@
+<!--components/process/process.wxml-->
+<view class='progress-root-container'>
+  <text class='text'>完成度</text>
+  <view class='progress-max'></view>
+  <view class='progress-current' style="width:{{2*progress}}rpx"></view>
+  <text class='pencent-text'>{{progressText}}%</text>
+  <span class='slice-button' catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd"
+    style="left:{{2*buttonLeft}}rpx"></span>
+</view>

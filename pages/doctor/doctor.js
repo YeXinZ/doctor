@@ -1,6 +1,8 @@
 // pages/doctor/doctor.js
 const app = getApp();
-import { getCase } from "../../api/index";
+import {
+  getCase
+} from "../../api/index";
 
 Page({
 
@@ -10,45 +12,44 @@ Page({
   data: {
     imgBase: app.globalData.imgUrl,
     menuList: [{
-      title: '生活打卡',
-      menus: [
-        {
-          title: '饮食打卡',
-          iconPath: '/images/food.png',
-          pagePath: ''
-        },
-        {
-          title: '运动打卡',
-          iconPath: '/images/sport.png',
-          pagePath: ''
-        },
-        {
-          title: '心情打卡',
-          iconPath: '/images/mood.png',
-          pagePath: ''
-        }
-      ],
-    },
-    {
-      title: '生活指导',
-      menus: [
-        {
-          title: '用药指导',
-          iconPath: '/images/medicine.png',
-          pagePath: '/pages/guide/medicine'
-        },
-        {
-          title: '饮食指导',
-          iconPath: '/images/food.png',
-          pagePath: '/pages/guide/food'
-        },
-        {
-          title: '运动指导',
-          iconPath: '/images/sport.png',
-          pagePath: '/pages/guide/sport'
-        }
-      ]
-    }],
+        title: '生活打卡',
+        menus: [{
+            title: '饮食打卡',
+            iconPath: '/images/food.png',
+            pagePath: '/pages/clock/food'
+          },
+          {
+            title: '运动打卡',
+            iconPath: '/images/sport.png',
+            pagePath: '/pages/clock/sport'
+          },
+          {
+            title: '心情打卡',
+            iconPath: '/images/mood.png',
+            pagePath: '/pages/clock/mood'
+          }
+        ],
+      },
+      {
+        title: '生活指导',
+        menus: [{
+            title: '用药指导',
+            iconPath: '/images/medicine.png',
+            pagePath: '/pages/guide/medicine'
+          },
+          {
+            title: '饮食指导',
+            iconPath: '/images/food.png',
+            pagePath: '/pages/guide/food'
+          },
+          {
+            title: '运动指导',
+            iconPath: '/images/sport.png',
+            pagePath: '/pages/guide/sport'
+          }
+        ]
+      }
+    ],
     dataList: []
   },
 

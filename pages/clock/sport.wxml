@@ -1,0 +1,25 @@
+<!--pages/clock/sport.wxml-->
+<view class="sport_clock">
+  <view class="module">
+    <view class="module_title">今日运动</view>
+    <view class="content_wrap">
+      <view class="sport_item" wx:for="{{today_motion}}">
+        <view class="title">{{item.motion_name}}</view>
+        <video src="{{item.motion_course}}" style="width:100%;"></video>
+      </view>
+    </view>
+  </view>
+  <view class="module">
+    <view class="module_title">运动打卡</view>
+    <view class="content_wrap">
+      <view class="progress_wrap">
+        <my-process currentProgress="10" maxProgress="10" canSlide="{{true}}"></my-process>
+      </view>
+      <view class="input_wrap">
+        <van-field model:value="{{motion_data}}" type="textarea" autosize="{{autosize}}" placeholder="请输入"
+          border="{{false}}" />
+      </view>
+      <button class="submit_btn" type="warn" bindtap="toSubmit">提交</button>
+    </view>
+  </view>
+</view>

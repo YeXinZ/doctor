@@ -1,0 +1,50 @@
+<!--pages/clock/food.wxml-->
+<view class="food_clock">
+  <view class="module">
+    <view class="module_title">今日食谱</view>
+    <view class="content_wrap">
+      <view class="recipe">
+        <view><text>早餐：</text>{{today_diet.breakfast}}</view>
+        <view><text>午餐：</text>{{today_diet.lunch}}</view>
+        <view><text>晚餐：</text>{{today_diet.dinner}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="module">
+    <view class="module_title">饮食打卡</view>
+    <view class="content_wrap">
+      <view class="radio_wrap">
+        <van-radio-group value="{{meal_type}}" direction="horizontal" bind:change="onChange">
+          <van-radio name="1">早餐</van-radio>
+          <van-radio name="2">午餐</van-radio>
+          <van-radio name="3">晚餐</van-radio>
+        </van-radio-group>
+      </view>
+      <van-uploader file-list="{{meal_img}}" bind:after-read="afterRead" />
+      <view class="tip">只支持.jpg格式</view>
+      <view class="input_wrap">
+        <van-field model:value="{{meal_data}}" type="textarea" autosize="{{autosize}}" placeholder="请输入"
+          custom-style="padding:0 10rpx" border="{{false}}" />
+      </view>
+      <button class="submit_btn" type="warn" bindtap="toSubmit">提交</button>
+    </view>
+  </view>
+  <view class="module">
+    <view class="flex justify-between align-center module_title">
+      <text>打卡记录</text>
+      <text class="more_btn" bindtap="checkMore">查看更多</text>
+    </view>
+    <view class="content_wrap">
+      <view class="list_item" wx:for="{{diet_list}}">
+        <view class="date">{{item.record_date}}</view>
+        <view>{{item.meal_type}}：</view>
+        <van-grid column-num="3" gutter="{{5}}" border="{{false}}">
+          <van-grid-item use-slot wx:for="{{item.meal_img}}" wx:for-index="imgIdx" wx:for-item="img">
+            <van-image width="100%" height="60" lazy-load src="{{imgBase+img}}" />
+          </van-grid-item>
+        </van-grid>
+        <view class="detail">{{item.meal_data}}</view>
+      </view>
+    </view>
+  </view>
+</view>

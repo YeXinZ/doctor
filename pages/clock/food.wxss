@@ -1,0 +1,83 @@
+/* pages/clock/food.wxss */
+.food_clock {
+  min-height: 100vh;
+  padding: 30rpx;
+  background-color: var(--pageColor);
+}
+
+.module {
+  padding: 0 10rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+}
+
+.module_title {
+  font-weight: bolder;
+  padding: 20rpx;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.content_wrap {
+  padding: 20rpx;
+}
+
+.recipe {
+  background-color: var(--bgColor);
+  border: 2px solid var(--wrapBorder);
+  padding: 10rpx;
+}
+
+.recipe view {
+  font-size: 30rpx;
+  line-height: 1.8;
+}
+
+.recipe view text {
+  color: #666666;
+}
+
+.content_wrap .van-field {
+  padding: 0;
+}
+
+.tip {
+  font-size: 24rpx;
+  color: #999999;
+  margin: 10rpx 0 20rpx;
+}
+
+.more_btn {
+  font-size: 26rpx;
+  color: var(--mainColor);
+}
+
+.list_item+.list_item {
+  margin-top: 20rpx;
+}
+
+.list_item .date {
+  font-weight: bold;
+  color: #333333;
+}
+
+.list_item view {
+  line-height: 1.8;
+}
+
+.input_wrap {
+  border: 1px solid var(--borderColor);
+}
+
+.submit_btn {
+  margin-top: 20rpx;
+}
+
+.radio_wrap {
+  margin-bottom: 30rpx;
+}
+
+.detail {
+  font-size: 26rpx;
+}

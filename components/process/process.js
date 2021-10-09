@@ -87,7 +87,7 @@ Component({
       if (buttonLeft < min) {
         return
       }
-      console.log(buttonLeft)
+      // console.log(buttonLeft)
       this.setData({
         // buttonTop: buttonTop,
         buttonLeft: buttonLeft,

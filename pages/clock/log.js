@@ -1,7 +1,8 @@
 // pages/clock/log.js
 import {
   getMoodList,
-  getDietList
+  getDietList,
+  getMotionList
 } from "../../api/index";
 const app = getApp();
 
@@ -58,6 +59,19 @@ Page({
           total: res.total,
           loadText: newList.length >= res.total ? "没有更多数据了" : ""
         })
+      })
+    } else if (type === 'sport') {
+      getMotionList({
+        page: page,
+        pageSize: pageSize
+      }).then(res => {
+        const newList = dataList.concat(res.data);
+        this.setData({
+          page: page + 1,
+          dataList: newList,
+          total: res.total,
+          loadText: newList.length >= res.total ? "没有更多数据了" : ""
+        });
       })
     }
   },

@@ -168,3 +168,19 @@ export const getClockMotion = () => {
     method: 'GET'
   })
 }
+// 运动打卡
+export const addMotion = (data) => {
+  return request({
+    url: '/api/Clockin/addMotion',
+    method: 'POST',
+    data
+  })
+}
+// 获取运动打卡列表
+export const getMotionList = (data) => {
+  return request({
+    url: '/api/Clockin/getMotionList',
+    method: 'GET',
+    data
+  })
+}

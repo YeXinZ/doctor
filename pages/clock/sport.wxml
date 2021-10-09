@@ -12,14 +12,29 @@
   <view class="module">
     <view class="module_title">运动打卡</view>
     <view class="content_wrap">
-      <view class="progress_wrap">
-        <my-process currentProgress="10" maxProgress="10" canSlide="{{true}}"></my-process>
+      <block wx:for="{{formData}}">
+        <view class="sport_name">{{item.motion_item}}</view>
+        <view class="progress_wrap">
+          <my-process id="ratio{{index+1}}" currentProgress="10" maxProgress="10" canSlide="{{true}}"></my-process>
+        </view>
+        <view class="input_wrap">
+          <van-field value="{{item.motion_data}}" type="textarea" autosize="{{autosize}}" placeholder="请输入"
+            border="{{false}}" data-index="{{index}}" bind:change="onChange" />
+        </view>
+      </block>
+      <button wx:if="{{formData.length>0}}" class="submit_btn" type="warn" bindtap="toSubmit">提交</button>
+    </view>
+  </view>
+  <view class="module">
+    <view class="flex justify-between align-center module_title">
+      <text>打卡记录</text>
+      <text class="more_btn" bindtap="checkMore">查看更多</text>
+    </view>
+    <view class="content_wrap">
+      <view class="list_item" wx:for="{{motion_list}}">
+        <view class="date">{{item.record_date}}</view>
+        <view>{{item.motion_item}}完成{{item.motion_ratio}}%{{item.motion_data?'，'+item.motion_data:''}}</view>
       </view>
-      <view class="input_wrap">
-        <van-field model:value="{{motion_data}}" type="textarea" autosize="{{autosize}}" placeholder="请输入"
-          border="{{false}}" />
-      </view>
-      <button class="submit_btn" type="warn" bindtap="toSubmit">提交</button>
     </view>
   </view>
 </view>

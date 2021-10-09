@@ -37,6 +37,7 @@
 
 .input_wrap {
   border: 1px solid var(--borderColor);
+  margin-top: 20rpx;
 }
 
 .submit_btn {
@@ -46,4 +47,27 @@
 .more_btn {
   font-size: 26rpx;
   color: var(--mainColor);
+}
+
+.list_item+.list_item {
+  margin-top: 20rpx;
+}
+
+.list_item .date {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.list_item view {
+  font-size: 30rpx;
+  line-height: 1.8;
+}
+
+.sport_name {
+  margin-bottom: 10rpx;
+}
+
+.sport_name:not(:first-of-type) {
+  margin-top: 20rpx;
 }

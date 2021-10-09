@@ -12,7 +12,7 @@
   </view>
   <view class="module">
     <view class="flex justify-between align-center module_title">
-      <text>提交记录</text>
+      <text>打卡记录</text>
       <text class="more_btn" bindtap="checkMore">查看更多</text>
     </view>
     <view class="content_wrap">

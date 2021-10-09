@@ -19,6 +19,10 @@
         </van-grid>
         <view class="content">{{item.meal_data}}</view>
       </block>
+      <block wx:if="{{type==='sport'}}">
+        <view class="date">{{item.record_date}}</view>
+        <view class="content">{{item.motion_item}}完成{{item.motion_ratio}}%{{item.motion_data?'，'+item.motion_data:''}}</view>
+      </block>
     </view>
     <view class="text-center load_bottom" wx:if="loadText">
       <text>{{loadText}}</text>

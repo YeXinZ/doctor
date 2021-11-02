@@ -15,10 +15,20 @@
   <view class="module">
     <view class="flex justify-between align-center module_title">
       <text>历史病例</text>
-      <button class="upload_btn" size="mini" bindtap="toCase">上传病例</button>
+      <!-- <button class="upload_btn" size="mini" bindtap="toCase">上传病例</button> -->
     </view>
     <view style="padding: 20rpx 0;">
-      <view class="case_item" wx:for="{{dataList}}">
+      <van-grid gutter="{{5}}" column-num="3" border="{{false}}">
+        <van-grid-item use-slot url="/pages/case/index">
+          <image style="width:70rpx;height:70rpx;margin-bottome:20rpx" src="../../images/case.png" />
+          <text class="menu_title">查看病例</text>
+        </van-grid-item>
+        <van-grid-item use-slot url="/pages/case/add">
+          <image style="width:70rpx;height:70rpx;margin-bottome:20rpx" src="../../images/upload.png" />
+          <text class="menu_title">上传病例</text>
+        </van-grid-item>
+      </van-grid>
+      <!-- <view class="case_item" wx:for="{{dataList}}">
         <view class="title">病例：</view>
         <van-grid column-num="2" gutter="{{5}}" border="{{false}}">
           <van-grid-item use-slot wx:for="{{item.case_img}}" wx:for-index="imgIdx" wx:for-item="img">
@@ -33,7 +43,7 @@
           </van-grid-item>
         </van-grid>
         <view class="content">{{item.prescription_data}}</view>
-      </view>
+      </view> -->
     </view>
   </view>
 </view>

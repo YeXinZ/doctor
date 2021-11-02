@@ -6,9 +6,10 @@
   position: relative;
   width: 48%;
   height: 200rpx;
-  border: 3rpx solid var(--bgColor);
+  border: 3rpx solid #e5e5e5;
   border-radius: 10rpx;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30rpx;
 }
 
 .menu_item image {
@@ -28,6 +29,7 @@
   font-weight: bold;
   letter-spacing: 8px;
   line-height: 1.8;
+  font-size: 36rpx;
 }
 
 .menu_item:first-of-type text {
@@ -53,6 +55,6 @@
   color: var(--mainColor);
 }
 
-.list_wrap{
+.list_wrap {
   padding-top: 20rpx;
 }

@@ -39,7 +39,7 @@ export function request(config) {
             content: res.data.msg,
             duration: 2000
           });
-          reject(res)
+          reject(false)
         }
       },
       fail: (err) => {

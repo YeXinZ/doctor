@@ -1,0 +1,24 @@
+/* pages/case/index.wxss */
+.case_index {
+  padding: 20rpx;
+}
+
+.case_item {
+  background-color: var(--bgColor);
+  border: 2px solid var(--wrapBorder);
+  padding: 10rpx;
+}
+
+.case_item+.case_item {
+  margin-top: 20rpx;
+}
+
+.case_item .title {
+  margin-bottom: 20rpx;
+}
+
+.case_item .content {
+  margin-top: 20rpx;
+  color: var(--mainColor);
+  font-size: 30rpx;
+}

@@ -7,20 +7,20 @@ import {
 Page({
   data: {
     menuList: [{
-      title: '私人医生\n健康管理',
-      pagePath: '/pages/doctor/doctor'
-    },
-    {
-      title: '热门文章',
-      pagePath: '/pages/article/article'
-    },
-    {
-      title: '最新活动',
-      pagePath: "/pages/activity/activity"
-    },
-    {
-      title: '联系医生\n立马咨询'
-    }
+        title: '私人医生',
+        pagePath: '/pages/doctor/doctor'
+      },
+      {
+        title: '热门文章',
+        pagePath: '/pages/article/article'
+      },
+      {
+        title: '最新活动',
+        pagePath: "/pages/activity/activity"
+      },
+      {
+        title: '联系医生'
+      }
     ],
     articles: [],
     activities: [],
@@ -31,6 +31,10 @@ Page({
     if (path) {
       wx.navigateTo({
         url: path
+      })
+    } else {
+      wx.makePhoneCall({
+        phoneNumber: '17610063316'
       })
     }
   },
@@ -55,8 +59,8 @@ Page({
     })
   },
   onLoad() {
-    this.getArticle();
-    this.getActivity();
+    // this.getArticle();
+    // this.getActivity();
   },
   onPullDownRefresh: function () {
     setTimeout(() => {

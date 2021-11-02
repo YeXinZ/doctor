@@ -9,7 +9,7 @@
       <van-cell title="我的活动" is-link />
       <van-cell title="我的收藏" is-link />
       <van-cell title="治疗项目" is-link url="/pages/cure/cure" />
-      <van-cell title="联系医生" is-link />
+      <van-cell title="联系医生" is-link bindtap="contact" />
     </van-cell-group>
   </view>
 </view>

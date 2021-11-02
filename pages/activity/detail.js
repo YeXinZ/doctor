@@ -1,6 +1,12 @@
 // pages/activity/detail.js
-import { activityInfo, activitySignUp } from "../../api/index";
-import { checkPhone, checkName } from "../../utils/validate";
+import {
+  activityInfo,
+  activitySignUp
+} from "../../api/index";
+import {
+  checkPhone,
+  checkName
+} from "../../utils/validate";
 const app = getApp();
 
 Page({
@@ -12,16 +18,72 @@ Page({
     infoData: {},
     imgBase: app.globalData.imgUrl,
     user_name: '',
-    user_mobile: ''
+    user_mobile: '',
+    show: false,
+    verify(action) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          if (action === 'confirm') {
+            const {
+              user_name,
+              user_mobile,
+              infoData: {
+                id: activity_id
+              }
+            } = this.data;
+            if (!checkName(user_name) || !checkPhone(user_mobile)) {
+              resolve(false);
+            } else {
+              activitySignUp({
+                activity_id,
+                user_name,
+                user_mobile
+              }).then(res => {
+                wx.showToast({
+                  title: "报名成功",
+                  icon: 'success',
+                  duration: 2000
+                })
+                this.setData({
+                  user_name: '',
+                  user_mobile: ''
+                })
+                resolve(true);
+              })
+            }
+          } else {
+            resolve(true);
+          }
+        }, 13);
+      });
+    },
+  },
+
+  onClose() {
+    this.setData({
+      show: false
+    });
+  },
+
+  openApply() {
+    this.setData({
+      show: true
+    });
   },
 
   toApply() {
-    const { user_name, user_mobile, infoData: { id: activity_id } } = this.data;
+    const {
+      user_name,
+      user_mobile,
+      infoData: {
+        id: activity_id
+      }
+    } = this.data;
     if (!checkName(user_name)) {
-      return;
+      return false;
     }
     if (!checkPhone(user_mobile)) {
-      return;
+      return false;
     }
     console.log(user_name, user_mobile);
     activitySignUp({
@@ -44,7 +106,9 @@ Page({
   getData(id) {
     activityInfo(id).then(res => {
       console.log(res);
-      const data = { ...res };
+      const data = {
+        ...res
+      };
       data.activity_img = data.activity_img ? data.activity_img.split(',') : [];
       data.content = data.content.replace(/<img/gi, '<img style="max-width:100%;height:auto;float:left;display:block" ');
       console.log(data);
@@ -62,6 +126,9 @@ Page({
    */
   onLoad: function (options) {
     this.getData(options.id);
+    this.setData({
+      verify: this.data.verify.bind(this),
+    });
   },
 
   /**

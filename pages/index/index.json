@@ -3,5 +3,6 @@
   "usingComponents": {
     "article-item": "../../components/aItem/aItem",
     "activity-item": "../../components/vItem/vItem"
-  }
+  },
+  "enablePullDownRefresh": false
 }

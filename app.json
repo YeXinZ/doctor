@@ -16,7 +16,8 @@
     "pages/clock/mood",
     "pages/clock/log",
     "pages/clock/food",
-    "pages/clock/sport"
+    "pages/clock/sport",
+    "pages/case/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

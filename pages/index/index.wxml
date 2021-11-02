@@ -5,13 +5,23 @@
       <image src="../../images/menu-bg.png"></image>
       <text>{{menuList[0].title}}</text>
     </view>
+    <view class="menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
+      <image src="../../images/menu-bg.png"></image>
+      <text>{{menuList[1].title}}</text>
+    </view>
+  </view>
+  <view class="flex justify-between w-100">
+    <view class="menu_item" data-path="{{menuList[2].pagePath}}" bindtap="toPage">
+      <image src="../../images/menu-bg.png"></image>
+      <text>{{menuList[2].title}}</text>
+    </view>
     <view class="menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
       <image src="../../images/menu-bg.png"></image>
       <text>{{menuList[3].title}}</text>
     </view>
   </view>
 
-  <block wx:if="{{articles.length>0}}">
+  <!-- <block wx:if="{{articles.length>0}}">
     <view class="module_header">
       <text>{{menuList[1].title}}</text>
       <text class="more_btn" data-path="{{menuList[1].pagePath}}" bindtap="toPage">更多</text>
@@ -33,5 +43,5 @@
         <activity-item info-data="{{item}}"></activity-item>
       </block>
     </view>
-  </block>
+  </block> -->
 </view>

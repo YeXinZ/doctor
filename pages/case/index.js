@@ -1,7 +1,7 @@
-// pages/guide/medicine.js
+// pages/case/index.js
 const app = getApp();
 import {
-  getMedication
+  getCase
 } from "../../api/index";
 
 Page({
@@ -15,11 +15,13 @@ Page({
   },
 
   getList() {
-    getMedication().then(res => {
+    getCase().then(res => {
       const data = [...res];
       data.map(item => {
-        item.medicine_img = item.medicine_img ? item.medicine_img.split(',') : [];
+        item.case_img = item.case_img ? item.case_img.split(',') : [];
+        item.prescription_img = item.prescription_img ? item.prescription_img.split(',') : [];
       })
+      console.log(data);
       this.setData({
         dataList: [...data]
       })

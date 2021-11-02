@@ -5,21 +5,20 @@
 }
 
 .content {
-  padding: 0 30rpx 30rpx;
+  padding: 20rpx 30rpx 30rpx;
 }
 
-.content .wrap {
-  background-color: var(--bgColor);
+.wrap {
   color: var(--mainColor);
-  padding: 20rpx;
+  padding: 20rpx 10rpx;
 }
 
-.content .wrap view {
+.wrap view {
   color: var(--mainColor);
   line-height: 1.8;
 }
 
-.content .wrap:not(:first-of-type) {
+.wrap:not(:first-of-type) {
   margin-top: 20rpx;
 }
 

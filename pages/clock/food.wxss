@@ -81,3 +81,7 @@
 .detail {
   font-size: 26rpx;
 }
+
+.content_wrap .van-icon-cross {
+  color: #ffffff;
+}

@@ -1,0 +1,8 @@
+<!--pages/mine/activity.wxml-->
+<view class="activity">
+  <view class="page_list">
+    <block wx:for="{{dataList}}">
+      <activity-item info-data="{{item}}" show-user="{{true}}"></activity-item>
+    </block>
+  </view>
+</view>

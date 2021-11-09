@@ -1,0 +1,4 @@
+/* pages/mine/activity.wxss */
+.page_list {
+  padding: 20rpx 30rpx;
+}

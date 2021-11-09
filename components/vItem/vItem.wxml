@@ -3,6 +3,10 @@
   <van-image width="80" height="100%" lazy-load src="{{imgBase+infoData.activity_img}}" />
   <view class="content">
     <view class="title">{{infoData.activity_name}}</view>
-    <view class="desc">{{infoData.activity_time}}</view>
+    <view wx:if="{{showUser}}" class="user_info">
+      <text>{{infoData.user_name}}</text>
+      <text>{{infoData.user_mobile}}</text>
+    </view>
+    <view class="desc">{{infoData.activity_time||infoData.create_time}}</view>
   </view>
 </view>

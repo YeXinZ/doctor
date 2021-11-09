@@ -32,3 +32,7 @@
   color: #999999;
   margin: 10rpx 0 20rpx;
 }
+
+.content .van-icon-cross {
+  color: #ffffff;
+}

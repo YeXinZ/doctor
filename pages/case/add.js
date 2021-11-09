@@ -26,25 +26,28 @@ Page({
       file
     } = event.detail;
     console.log(file);
+    const that = this;
     wx.uploadFile({
       url: baseUrl + '/api/Upload/upload',
       filePath: file.url,
-      name: 'file',
+      name: 'image',
       header: {
         "Content-Type": "multipart/form-data"
       },
       success(res) {
-        // 上传完成需要更新 fileList
-        const {
-          case_img = []
-        } = this.data;
-        case_img.push({
-          ...file,
-          url: res.data
-        });
-        this.setData({
-          case_img
-        });
+        if (res.statusCode === 200) {
+          const url = JSON.parse(res.data).url;
+          const {
+            case_img = []
+          } = that.data;
+          case_img.push({
+            ...file,
+            url
+          });
+          that.setData({
+            case_img
+          });
+        }
       },
     });
   },
@@ -54,25 +57,28 @@ Page({
       file
     } = event.detail;
     console.log(file);
+    const that = this;
     wx.uploadFile({
       url: baseUrl + '/api/Upload/upload',
       filePath: file.url,
-      name: 'file',
+      name: 'image',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       success(res) {
-        // 上传完成需要更新 fileList
-        const {
-          prescription_img = []
-        } = this.data;
-        prescription_img.push({
-          ...file,
-          url: res.data
-        });
-        this.setData({
-          prescription_img
-        });
+        if (res.statusCode === 200) {
+          const url = JSON.parse(res.data).url;
+          const {
+            prescription_img = []
+          } = that.data;
+          prescription_img.push({
+            ...file,
+            url
+          });
+          that.setData({
+            prescription_img
+          });
+        }
       },
     });
   },

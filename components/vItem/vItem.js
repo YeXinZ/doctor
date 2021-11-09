@@ -8,6 +8,10 @@ Component({
   properties: {
     infoData: {
       type: Object
+    },
+    showUser: {
+      type: Boolean,
+      default: false
     }
   },
 

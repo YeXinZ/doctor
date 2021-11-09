@@ -184,3 +184,11 @@ export const getMotionList = (data) => {
     data
   })
 }
+// 获取我的活动
+export const getUserActivity = (data) => {
+  return request({
+    url: '/api/Personal/getUserActivity',
+    method: 'GET',
+    data
+  })
+}

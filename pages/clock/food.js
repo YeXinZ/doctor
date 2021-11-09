@@ -3,6 +3,9 @@ import {
   getTodayDiet,
   addDiet
 } from "../../api/index";
+import {
+  baseUrl
+} from '../../utils/request';
 const app = getApp();
 
 Page({
@@ -66,26 +69,29 @@ Page({
     const {
       file
     } = event.detail;
-    console.log(file);
+    const that = this;
     wx.uploadFile({
       url: baseUrl + '/api/Upload/upload',
       filePath: file.url,
-      name: 'file',
+      name: 'image',
       header: {
         "Content-Type": "multipart/form-data"
       },
       success(res) {
-        // 上传完成需要更新 fileList
-        const {
-          meal_img = []
-        } = this.data;
-        meal_img.push({
-          ...file,
-          url: res.data
-        });
-        this.setData({
-          meal_img
-        });
+        if (res.statusCode === 200) {
+          const url = JSON.parse(res.data).url;
+          // 上传完成需要更新 fileList
+          const {
+            meal_img = []
+          } = that.data;
+          meal_img.push({
+            ...file,
+            url
+          });
+          that.setData({
+            meal_img
+          });
+        }
       },
     });
   },

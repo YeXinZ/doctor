@@ -35,8 +35,8 @@ export function request(config) {
           resolve(res.data.data)
         } else {
           wx.showToast({
-            icon: 'fail',
-            content: res.data.msg,
+            icon: 'none',
+            title: res.data.msg,
             duration: 2000
           });
           reject(false)

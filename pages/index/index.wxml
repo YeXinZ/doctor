@@ -1,24 +1,20 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="flex justify-between w-100">
-    <view class="menu_item" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
-      <image src="../../images/menu-bg.png"></image>
-      <text>{{menuList[0].title}}</text>
-    </view>
-    <view class="menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
-      <image src="../../images/menu-bg.png"></image>
-      <text>{{menuList[1].title}}</text>
-    </view>
+  <view class="menu_item" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
+    <image src="../../images/menu-bg.png"></image>
+    <text>{{menuList[0].title}}</text>
   </view>
-  <view class="flex justify-between w-100">
-    <view class="menu_item" data-path="{{menuList[2].pagePath}}" bindtap="toPage">
-      <image src="../../images/menu-bg.png"></image>
-      <text>{{menuList[2].title}}</text>
-    </view>
-    <view class="menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
-      <image src="../../images/menu-bg.png"></image>
-      <text>{{menuList[3].title}}</text>
-    </view>
+  <view class="menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
+    <image src="../../images/menu-bg.png"></image>
+    <text>{{menuList[1].title}}</text>
+  </view>
+  <view class="menu_item" data-path="{{menuList[2].pagePath}}" bindtap="toPage">
+    <image src="../../images/menu-bg.png"></image>
+    <text>{{menuList[2].title}}</text>
+  </view>
+  <view class="menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
+    <image src="../../images/menu-bg.png"></image>
+    <text>{{menuList[3].title}}</text>
   </view>
 
   <!-- <block wx:if="{{articles.length>0}}">

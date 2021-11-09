@@ -84,7 +84,7 @@ Page({
   },
 
   toSubmit() {
-    const {
+    let {
       case_img,
       case_content,
       prescription_img,
@@ -98,6 +98,8 @@ Page({
       });
       return;
     }
+    case_img = case_img.map(k => k.url);
+    prescription_img = prescription_img.map(k => k.url);
     const params = {
       case_img: case_img.join(','),
       case_content,

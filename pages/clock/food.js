@@ -32,7 +32,7 @@ Page({
   },
 
   toSubmit() {
-    const {
+    let {
       meal_data,
       meal_img,
       meal_type
@@ -45,6 +45,7 @@ Page({
       });
       return;
     }
+    meal_img = meal_img.map(k => k.url);
     const params = {
       meal_img: meal_img.join(','),
       meal_data,

@@ -2,11 +2,9 @@
 <view class="medicine_guide">
   <view class="list_item" wx:for="{{dataList}}">
     <view class="title">用法用量：</view>
-    <van-grid column-num="2" gutter="{{5}}" border="{{false}}">
-      <van-grid-item use-slot wx:for="{{item.medicine_img}}" wx:for-index="imgIdx" wx:for-item="img">
-        <van-image width="100%" height="60" lazy-load src="{{imgBase+img}}" />
-      </van-grid-item>
-    </van-grid>
+    <block wx:for="{{item.medicine_img}}" wx:for-index="imgIdx" wx:for-item="img">
+      <van-image style="margin-right:10rpx" width="48%" height="100" lazy-load src="{{imgBase+img}}" />
+    </block>
     <view class="content">{{item.medicine_data}}</view>
   </view>
 </view>

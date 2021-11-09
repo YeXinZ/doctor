@@ -2,18 +2,14 @@
 <view class="case_index">
   <view class="case_item" wx:for="{{dataList}}">
     <view class="title">病例：</view>
-    <van-grid column-num="2" gutter="{{5}}" border="{{false}}">
-      <van-grid-item use-slot wx:for="{{item.case_img}}" wx:for-index="imgIdx" wx:for-item="img">
-        <van-image width="100%" height="60" lazy-load src="{{imgBase+img}}" />
-      </van-grid-item>
-    </van-grid>
+    <block wx:for="{{item.case_img}}" wx:for-index="imgIdx" wx:for-item="img">
+      <van-image style="margin-right:10rpx" width="48%" height="100" lazy-load src="{{imgBase+img}}" />
+    </block>
     <view class="content" style="margin-bottom:20rpx">{{item.case_content}}</view>
     <view class="title">药方：</view>
-    <van-grid column-num="2" gutter="{{5}}" border="{{false}}">
-      <van-grid-item use-slot wx:for="{{item.prescription_img}}" wx:for-index="imgIdx" wx:for-item="img">
-        <van-image width="100%" height="60" lazy-load src="{{imgBase+img}}" />
-      </van-grid-item>
-    </van-grid>
+    <block wx:for="{{item.prescription_img}}" wx:for-index="imgIdx" wx:for-item="img">
+      <van-image style="margin-right:10rpx" width="48%" height="100" lazy-load src="{{imgBase+img}}" />
+    </block>
     <view class="content">{{item.prescription_data}}</view>
   </view>
 </view>

@@ -1,0 +1,5 @@
+<!--components/auth/auth.wxml-->
+<van-dialog use-slot show="{{ show }}" show-cancel-button confirm-button-open-type="getUserInfo"
+  bind:close="onClose" bind:getuserinfo="getUserInfo">
+  
+</van-dialog>

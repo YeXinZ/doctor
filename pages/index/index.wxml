@@ -1,8 +1,14 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="menu_item" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
+  <view class="menu_item" wx:if="{{!userPhone}}" data-path="{{menuList[0].pagePath}}">
+    <button style="width:100%;height:100%" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <image src="../../images/menu-bg.png"></image>
+      <text style="position:inherit;line-height:200rpx">{{menuList[0].title}}</text>
+    </button>
+  </view>
+  <view class="menu_item" wx:if="{{userPhone}}" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
     <image src="../../images/menu-bg.png"></image>
-    <text>{{menuList[0].title}}</text>
+    <text style="position:inherit;line-height:200rpx">{{menuList[0].title}}</text>
   </view>
   <view class="menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
     <image src="../../images/menu-bg.png"></image>

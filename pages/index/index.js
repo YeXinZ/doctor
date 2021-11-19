@@ -3,6 +3,7 @@ import {
   getHotArticle,
   activityList
 } from "../../api/index";
+const app = getApp();
 
 Page({
   data: {
@@ -25,6 +26,18 @@ Page({
     articles: [],
     activities: [],
     loading: true,
+    userPhone: ''
+  },
+  getPhoneNumber(e) {
+    const phone = wx.getStorageSync({
+      key: 'phone'
+    });
+    console.log(phone);
+    if (!phone) {
+      app.getPhoneNumber(e, function () {
+        console.log(22222);
+      })
+    }
   },
   toPage(e) {
     const path = e.currentTarget.dataset.path;
@@ -61,6 +74,11 @@ Page({
   onLoad() {
     // this.getArticle();
     // this.getActivity();
+  },
+  onShow() {
+    this.setData({
+      userPhone: wx.getStorageSync('phone') || ''
+    })
   },
   onPullDownRefresh: function () {
     setTimeout(() => {

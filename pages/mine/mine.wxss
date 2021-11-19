@@ -21,3 +21,11 @@
 .menu_list {
   margin-top: 30rpx;
 }
+
+.auth_btn {
+  width: 100rpx;
+  height: 100rpx;
+  padding: 0;
+  border-radius: 50%;
+  margin: 0;
+}

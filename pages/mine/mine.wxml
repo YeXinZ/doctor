@@ -1,8 +1,10 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine">
   <view class="page_top">
-    <van-image width="50" height="50" round src="https://img.yzcdn.cn/vant/cat.jpeg" />
-    <view class="name">用户名</view>
+    <button class="auth_btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      <van-image width="50" height="50" round :src="{{userInfo.avatarUrl}}" />
+    </button>
+    <view class="name">{{userInfo.nickName}}</view>
   </view>
   <view class="menu_list">
     <van-cell-group>

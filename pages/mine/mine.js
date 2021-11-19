@@ -24,6 +24,23 @@ Page({
         canIUseGetUserProfile: true
       })
     }
+    const that = this;
+    wx.getSetting({
+      success: function (res) {
+        console.log(res, 'getSetting');
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res);
+              that.setData({
+                userInfo: res.userInfo || {}
+              })
+            }
+          })
+        }
+      }
+    })
   },
 
   contact() {
@@ -47,12 +64,13 @@ Page({
   },
 
   getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    if (e.detail.userInfo) {
+      this.setData({
+        userInfo: e.detail.userInfo
+      })
+    } else {
+      console.log("获取信息失败")
+    }
   },
 
   /**

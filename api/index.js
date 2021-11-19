@@ -192,3 +192,27 @@ export const getUserActivity = (data) => {
     data
   })
 }
+// 授权登录
+export const authLogin = (data) => {
+  return request({
+    url: '/api/author/login',
+    method: 'GET',
+    data
+  })
+}
+// 获取手机号
+export const authNumber = (data) => {
+  return request({
+    url: '/api/author/number',
+    method: 'GET',
+    data
+  })
+}
+// 注册
+export const authRegist = (data) => {
+  return request({
+    url: '/api/author/regist',
+    method: 'GET',
+    data
+  })
+}

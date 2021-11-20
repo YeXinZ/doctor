@@ -1,27 +1,13 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="menu_item" wx:if="{{!userPhone}}" data-path="{{menuList[0].pagePath}}">
-    <button style="width:100%;height:100%" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+  <block wx:for="{{menuList}}">
+    <view class="menu_item" data-path="{{item.pagePath}}" data-auth="{{item.auth}}" data-contact="{{item.contact}}"
+      bindtap="toPage">
       <image src="../../images/menu-bg.png"></image>
-      <text style="position:inherit;line-height:200rpx">{{menuList[0].title}}</text>
-    </button>
-  </view>
-  <view class="menu_item" wx:if="{{userPhone}}" data-path="{{menuList[0].pagePath}}" bindtap="toPage">
-    <image src="../../images/menu-bg.png"></image>
-    <text style="position:inherit;line-height:200rpx">{{menuList[0].title}}</text>
-  </view>
-  <view class="menu_item" data-path="{{menuList[1].pagePath}}" bindtap="toPage">
-    <image src="../../images/menu-bg.png"></image>
-    <text>{{menuList[1].title}}</text>
-  </view>
-  <view class="menu_item" data-path="{{menuList[2].pagePath}}" bindtap="toPage">
-    <image src="../../images/menu-bg.png"></image>
-    <text>{{menuList[2].title}}</text>
-  </view>
-  <view class="menu_item" data-path="{{menuList[3].pagePath}}" bindtap="toPage">
-    <image src="../../images/menu-bg.png"></image>
-    <text>{{menuList[3].title}}</text>
-  </view>
+      <text style="position:inherit;line-height:200rpx">{{item.title}}</text>
+    </view>
+  </block>
+  <auth-comp id="authComp"></auth-comp>
 
   <!-- <block wx:if="{{articles.length>0}}">
     <view class="module_header">

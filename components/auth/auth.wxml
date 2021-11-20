@@ -1,5 +1,10 @@
 <!--components/auth/auth.wxml-->
-<van-dialog use-slot show="{{ show }}" show-cancel-button confirm-button-open-type="getUserInfo"
-  bind:close="onClose" bind:getuserinfo="getUserInfo">
-  
-</van-dialog>
+<view>
+  <van-dialog title="授权用户信息" message="该功能需要授权用户信息，是否确认授权？" show="{{ show }}" confirm-button-color="#BF3F3F"
+    show-cancel-button confirm-button-open-type="getUserInfo" bind:cancel="onClose" bind:getuserinfo="getUserProfile">
+  </van-dialog>
+  <van-dialog title="登录" message="手机号一键绑定登录" show="{{ show1 }}" show-cancel-button
+    confirm-button-open-type="getPhoneNumber" confirm-button-color="#BF3F3F" bind:cancel="onClose1"
+    bind:getphonenumber="getPhoneNumber">
+  </van-dialog>
+</view>

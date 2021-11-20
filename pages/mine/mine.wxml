@@ -1,9 +1,7 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine">
   <view class="page_top">
-    <button class="auth_btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-      <van-image width="50" height="50" round :src="{{userInfo.avatarUrl}}" />
-    </button>
+    <van-image width="50" height="50" round src="{{userInfo.avatarUrl}}" />
     <view class="name">{{userInfo.nickName}}</view>
   </view>
   <view class="menu_list">
@@ -14,4 +12,5 @@
       <van-cell title="联系医生" is-link bindtap="contact" />
     </van-cell-group>
   </view>
+  <auth-comp id="authComp" back-home="{{true}}" bind:setUserInfo="setUserInfo"></auth-comp>
 </view>

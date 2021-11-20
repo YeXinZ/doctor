@@ -2,7 +2,8 @@
   "navigationBarTitleText": "首页",
   "usingComponents": {
     "article-item": "../../components/aItem/aItem",
-    "activity-item": "../../components/vItem/vItem"
+    "activity-item": "../../components/vItem/vItem",
+    "auth-comp": "../../components/auth/auth"
   },
   "enablePullDownRefresh": false
 }

@@ -124,3 +124,7 @@ view {
 .van-radio .van-icon {
   color: #ffffff !important;
 }
+
+.van-button__text {
+  color: inherit;
+}

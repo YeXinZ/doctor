@@ -66,9 +66,17 @@ Page({
   },
 
   openApply() {
-    this.setData({
-      show: true
-    });
+    const phone = wx.getStorageSync('phone');
+    const userInfo = wx.getStorageSync('userInfo');
+    if (!userInfo) {
+      this.selectComponent('#authComp').showDialog(1);
+    } else if (!phone) {
+      this.selectComponent('#authComp').showDialog(2);
+    } else {
+      this.setData({
+        show: true
+      });
+    }
   },
 
   toApply() {

@@ -24,23 +24,6 @@ Page({
         canIUseGetUserProfile: true
       })
     }
-    const that = this;
-    wx.getSetting({
-      success: function (res) {
-        console.log(res, 'getSetting');
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function (res) {
-              console.log(res);
-              that.setData({
-                userInfo: res.userInfo || {}
-              })
-            }
-          })
-        }
-      }
-    })
   },
 
   contact() {
@@ -49,28 +32,10 @@ Page({
     })
   },
 
-  getUserProfile(e) {
-    // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
+  setUserInfo(e) {
+    this.setData({
+      userInfo: e.detail
     })
-  },
-
-  getUserInfo(e) {
-    if (e.detail.userInfo) {
-      this.setData({
-        userInfo: e.detail.userInfo
-      })
-    } else {
-      console.log("获取信息失败")
-    }
   },
 
   /**
@@ -84,7 +49,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const phone = wx.getStorageSync('phone');
+    const userInfo = wx.getStorageSync('userInfo');
+    if (!userInfo) {
+      this.selectComponent('#authComp').showDialog(1);
+    } else if (!phone) {
+      this.selectComponent('#authComp').showDialog(2);
+    } else {
+      this.setData({
+        userInfo
+      })
+    }
   },
 
   /**

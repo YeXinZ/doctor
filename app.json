@@ -18,8 +18,7 @@
     "pages/clock/food",
     "pages/clock/sport",
     "pages/case/index",
-    "pages/mine/activity",
-    "pages/login/login"
+    "pages/mine/activity"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,7 +30,8 @@
   "tabBar": {
     "color": "#bdbdbd",
     "selectedColor": "#BF3F3F",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-hover.png",

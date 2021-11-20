@@ -31,4 +31,5 @@
       <!-- <button class="submit_btn" type="warn" bindtap="toApply">立即报名</button> -->
     </view>
   </van-dialog>
+  <auth-comp id="authComp"></auth-comp>
 </view>

@@ -1,7 +1,8 @@
 // index.js
 import {
   getHotArticle,
-  activityList
+  activityList,
+  getVip
 } from "../../api/index";
 
 Page({
@@ -9,7 +10,8 @@ Page({
     menuList: [{
       title: '私人医生',
       pagePath: '/pages/doctor/doctor',
-      auth: true
+      auth: true,
+      vip: true
     },
     {
       title: '热门文章',
@@ -31,11 +33,19 @@ Page({
   toPage(e) {
     const phone = wx.getStorageSync('phone');
     const userInfo = wx.getStorageSync('userInfo');
-    const { path, auth, contact } = e.currentTarget.dataset;
+    const { path, auth, contact, vip } = e.currentTarget.dataset;
     if (auth && !userInfo) {
       this.selectComponent('#authComp').showDialog(1);
     } else if (auth && !phone) {
       this.selectComponent('#authComp').showDialog(2);
+    } else if (vip) {
+      getVip().then(res => {
+        if (res && path) {
+          wx.navigateTo({
+            url: path
+          })
+        }
+      })
     } else if (path) {
       wx.navigateTo({
         url: path

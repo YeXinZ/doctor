@@ -8,17 +8,16 @@ export function request(config) {
   // 解构赋值
   let {
     url = '',
-      data = {},
-      method = 'POST'
+    data = {},
+    method = 'POST'
   } = {
     ...config
   };
-  const token = wx.getStorageSync({
-    key: 'token'
-  });
+  const token = wx.getStorageSync('token');
   let header = token ? {
     token
   } : {};
+  console.log(header);
 
   return new Promise((resolve, reject) => {
     wx.request({
@@ -27,7 +26,7 @@ export function request(config) {
       data: {
         ...data
       },
-      headers: {
+      header: {
         ...header
       },
       success: (res) => {

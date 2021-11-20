@@ -216,3 +216,10 @@ export const authRegist = (data) => {
     data
   })
 }
+// 私人医生点击
+export const getVip = () => {
+  return request({
+    url: '/api/Usercase/getVip',
+    method: 'GET'
+  })
+}

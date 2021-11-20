@@ -69,6 +69,7 @@ Component({
                           icon: 'success',
                           duration: 1000,
                         })
+                        wx.setStorageSync('token', res.token);
                       } else {
                         if (this.data.backHome) {
                           setTimeout(() => {

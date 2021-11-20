@@ -2,7 +2,7 @@
 <view class="container">
   <block wx:for="{{menuList}}">
     <view class="menu_item" data-path="{{item.pagePath}}" data-auth="{{item.auth}}" data-contact="{{item.contact}}"
-      bindtap="toPage">
+      data-vip="{{item.vip}}" bindtap="toPage">
       <image src="../../images/menu-bg.png"></image>
       <text style="position:inherit;line-height:200rpx">{{item.title}}</text>
     </view>

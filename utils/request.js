@@ -32,6 +32,19 @@ export function request(config) {
       success: (res) => {
         if (res.data && res.data.status === 200) {
           resolve(res.data.data)
+        } else if (res.data && res.data.status === 300) {
+          wx.showToast({
+            icon: 'none',
+            title: res.data.msg,
+            duration: 1200
+          });
+          wx.clearStorageSync();
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+          }, 1200);
+          reject(false);
         } else {
           wx.showToast({
             icon: 'none',

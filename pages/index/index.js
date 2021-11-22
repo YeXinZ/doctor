@@ -8,23 +8,23 @@ import {
 Page({
   data: {
     menuList: [{
-      title: '私人医生',
-      pagePath: '/pages/doctor/doctor',
-      auth: true,
-      vip: true
-    },
-    {
-      title: '热门文章',
-      pagePath: '/pages/article/article'
-    },
-    {
-      title: '最新活动',
-      pagePath: "/pages/activity/activity"
-    },
-    {
-      title: '联系医生',
-      contact: true
-    }
+        title: '私人医生',
+        pagePath: '/pages/doctor/doctor',
+        auth: true,
+        vip: true
+      },
+      {
+        title: '热门文章',
+        pagePath: '/pages/article/article'
+      },
+      {
+        title: '最新活动',
+        pagePath: "/pages/activity/activity"
+      },
+      {
+        title: '联系医生',
+        contact: true
+      }
     ],
     articles: [],
     activities: [],
@@ -33,7 +33,12 @@ Page({
   toPage(e) {
     const phone = wx.getStorageSync('phone');
     const userInfo = wx.getStorageSync('userInfo');
-    const { path, auth, contact, vip } = e.currentTarget.dataset;
+    const {
+      path,
+      auth,
+      contact,
+      vip
+    } = e.currentTarget.dataset;
     if (auth && !userInfo) {
       this.selectComponent('#authComp').showDialog(1);
     } else if (auth && !phone) {
@@ -87,4 +92,10 @@ Page({
       wx.stopPullDownRefresh();
     }, 500);
   },
+  onShareAppMessage: function () {
+
+  },
+  onShareTimeline: function () {
+
+  }
 })

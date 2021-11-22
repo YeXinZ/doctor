@@ -146,5 +146,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onShareTimeline: function () {
+
   }
 })

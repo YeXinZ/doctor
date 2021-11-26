@@ -8,6 +8,12 @@
     </view>
   </block>
   <auth-comp id="authComp"></auth-comp>
+  <van-dialog use-slot width="260px" show-confirm-button="{{false}}" close-on-click-overlay="{{true}}"
+    show="{{ show }}">
+    <view style="text-align:center">
+      <image show-menu-by-longpress="{{true}}" style="width:500rpx;height:500rpx" src="../../images/code.jpg" />
+    </view>
+  </van-dialog>
 
   <!-- <block wx:if="{{articles.length>0}}">
     <view class="module_header">

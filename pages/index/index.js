@@ -13,10 +13,10 @@ Page({
         auth: true,
         vip: true
       },
-      {
-        title: '热门文章',
-        pagePath: '/pages/article/article'
-      },
+      // {
+      //   title: '热门文章',
+      //   pagePath: '/pages/article/article'
+      // },
       {
         title: '最新活动',
         pagePath: "/pages/activity/activity"
@@ -28,7 +28,8 @@ Page({
     ],
     articles: [],
     activities: [],
-    loading: true
+    loading: true,
+    show: false
   },
   toPage(e) {
     const phone = wx.getStorageSync('phone');
@@ -56,9 +57,12 @@ Page({
         url: path
       })
     } else if (contact) {
-      wx.makePhoneCall({
-        phoneNumber: '17610063316'
+      this.setData({
+        show: true
       })
+      // wx.makePhoneCall({
+      //   phoneNumber: '17610063316'
+      // })
     }
   },
   getArticle() {

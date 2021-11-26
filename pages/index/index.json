@@ -3,7 +3,8 @@
   "usingComponents": {
     "article-item": "../../components/aItem/aItem",
     "activity-item": "../../components/vItem/vItem",
-    "auth-comp": "../../components/auth/auth"
+    "auth-comp": "../../components/auth/auth",
+    "van-dialog": "@vant/weapp/dialog/index"
   },
   "enablePullDownRefresh": false
 }

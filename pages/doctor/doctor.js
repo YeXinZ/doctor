@@ -27,6 +27,11 @@ Page({
             title: '心情打卡',
             iconPath: '/images/mood.png',
             pagePath: '/pages/clock/mood'
+          },
+          {
+            title: '睡眠打卡',
+            iconPath: '/images/sleep.png',
+            pagePath: '/pages/clock/sleep'
           }
         ],
       },

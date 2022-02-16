@@ -18,7 +18,8 @@
     "pages/clock/food",
     "pages/clock/sport",
     "pages/case/index",
-    "pages/mine/activity"
+    "pages/mine/activity",
+    "pages/clock/sleep"
   ],
   "window": {
     "backgroundTextStyle": "light",

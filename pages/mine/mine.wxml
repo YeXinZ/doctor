@@ -13,4 +13,10 @@
     </van-cell-group>
   </view>
   <auth-comp id="authComp" back-home="{{true}}" bind:setUserInfo="setUserInfo"></auth-comp>
+  <van-dialog use-slot width="260px" show-confirm-button="{{false}}" close-on-click-overlay="{{true}}"
+    show="{{ show }}">
+    <view style="text-align:center">
+      <image show-menu-by-longpress="{{true}}" style="width:500rpx;height:500rpx" src="../../images/code.jpg" />
+    </view>
+  </van-dialog>
 </view>

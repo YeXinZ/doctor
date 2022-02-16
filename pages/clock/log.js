@@ -2,7 +2,8 @@
 import {
   getMoodList,
   getDietList,
-  getMotionList
+  getMotionList,
+  getSleepList
 } from "../../api/index";
 const app = getApp();
 
@@ -72,6 +73,22 @@ Page({
           total: res.total,
           loadText: newList.length >= res.total ? "没有更多数据了" : ""
         });
+      })
+    } else if(type === 'sleep'){
+      getSleepList({
+        page: page,
+        pageSize: pageSize
+      }).then(res => {
+        res.data.map(item => {
+          item.sleep_img = item.sleep_img ? item.sleep_img.split(',') : [];
+        });
+        const newList = dataList.concat(res.data);
+        this.setData({
+          page: page + 1,
+          dataList: newList,
+          total: res.total,
+          loadText: newList.length >= res.total ? "没有更多数据了" : ""
+        })
       })
     }
   },

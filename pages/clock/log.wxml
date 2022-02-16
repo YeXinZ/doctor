@@ -22,6 +22,13 @@
         <view class="content">{{item.motion_item}}完成{{item.motion_ratio}}%{{item.motion_data?'，'+item.motion_data:''}}
         </view>
       </block>
+      <block wx:if="{{type==='sleep'}}">
+        <view class="date">{{item.create_time}}</view>
+        <block wx:for="{{item.sleep_img}}" wx:for-index="imgIdx" wx:for-item="img">
+          <van-image style="margin-right:10rpx" width="32%" height="100" lazy-load src="{{imgBase+img}}" />
+        </block>
+        <view class="content">{{item.sleep_data}}</view>
+      </block>
     </view>
     <view class="text-center load_bottom" wx:if="loadText">
       <text>{{loadText}}</text>

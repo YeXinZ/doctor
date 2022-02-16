@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show: false,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -27,9 +28,12 @@ Page({
   },
 
   contact() {
-    wx.makePhoneCall({
-      phoneNumber: '17610063316'
-    })
+    this.setData({
+      show: true
+    });
+    // wx.makePhoneCall({
+    //   phoneNumber: '17610063316'
+    // })
   },
 
   setUserInfo(e) {

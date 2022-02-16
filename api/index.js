@@ -138,6 +138,29 @@ export const addMood = (mood_data) => {
     }
   })
 }
+// 获取睡眠打卡信息
+export const getSleep = () => {
+  return request({
+    url: '/api/Clockin/getSleep',
+    method: 'GET'
+  })
+}
+// 睡眠打卡
+export const addSleep = (data) => {
+  return request({
+    url: '/api/Clockin/addSleep',
+    method: 'POST',
+    data
+  })
+}
+// 获取睡眠打卡列表
+export const getSleepList = (data) => {
+  return request({
+    url: '/api/Clockin/getSleepList',
+    method: 'GET',
+    data
+  })
+}
 // 获取饮食指导信息
 export const getTodayDiet = () => {
   return request({
